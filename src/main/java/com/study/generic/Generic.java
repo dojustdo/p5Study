@@ -12,8 +12,9 @@ public class Generic {
         demo3();
     }
 
-
-    // 泛型类型在逻辑上可以看作多个类型，实际上是一个类型
+    /**
+     * 泛型类型在逻辑上可以看作多个类型，实际上是一个类型
+     */
     public static void demo1() {
         List a = new ArrayList<String>();
         List b = new ArrayList<Integer>();
@@ -23,7 +24,9 @@ public class Generic {
     }
 
 
-    // 泛型擦除 泛型只在编译期间有效，运行期间可通过反射改变类型
+    /**
+     * 泛型擦除 泛型只在编译期间有效，运行期间可通过反射改变类型
+     */
     public static void demo2() throws Exception {
         ArrayList<String> a = new ArrayList<String>();
         a.add("一个string");
@@ -37,15 +40,15 @@ public class Generic {
         System.out.println("操作后的长度：" + a.size());
     }
 
-
-    // 泛型通配符
+    /**
+     * 泛型通配符
+     */
     public static void demo3() {
         // 无边界都行
         ArrayList<Object> list1 = new ArrayList<>();
         demo3_1(list1);
         ArrayList<String> list2 = new ArrayList<>();
         demo3_1(list2);
-
 
         // demo3_2(list1); 上边界报错
         demo3_3(list1); // 下边界报错

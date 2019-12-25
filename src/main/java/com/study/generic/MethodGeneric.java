@@ -8,7 +8,13 @@ public class MethodGeneric<T> {
         return (T) null;
     }
 
-    // 实列方法，既可使用类的泛型，也可使用自定义泛型
+    /**
+     * 实列方法，既可使用类的泛型，也可使用自定义泛型
+     *
+     * @param z
+     * @param <Z>
+     * @return
+     */
     public <Z> Z justDoItDo(Z z) {
         return (Z) null;
     }

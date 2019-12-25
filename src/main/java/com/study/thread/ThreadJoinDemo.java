@@ -1,6 +1,4 @@
-package com.study.threadJoinDemo;
-
-import javax.sound.midi.Soundbank;
+package com.study.thread;
 
 /**
  * @author dxq
@@ -14,7 +12,7 @@ public class ThreadJoinDemo {
     public static int x = 2;
 
     // Thread.join 等待状态,保证线程执行结果的可见性
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {
             i = 3;
         });
@@ -24,13 +22,10 @@ public class ThreadJoinDemo {
         });
 
         t1.start();
-        try {
-            // 阻塞主线程，必须t1线程执行完成，再唤醒
-            t1.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // 阻塞主线程，必须t1线程执行完成，再唤醒
+        t1.join();
         t2.start();
-        System.out.println("result" + i);
+        Thread.sleep(1000);
+        System.out.println("result:" + i);
     }
 }
