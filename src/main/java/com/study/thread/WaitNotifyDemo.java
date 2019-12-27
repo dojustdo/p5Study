@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * @author dxq
  * @title: WaitNotifyDemo
- * @projectName reflex
+ * @projectName 线程
  * @description: 线程的 wait notify通信demo
  * @date 2019/12/25 10:03
  */

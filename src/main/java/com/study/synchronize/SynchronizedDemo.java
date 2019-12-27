@@ -3,7 +3,7 @@ package com.study.synchronize;
 /**
  * @author dxq
  * @title: SynchronizedDemo
- * @projectName reflex
+ * @projectName 线程安全分析
  * @description: synchronized 同步锁
  * @date 2019/12/25 17:41
  */

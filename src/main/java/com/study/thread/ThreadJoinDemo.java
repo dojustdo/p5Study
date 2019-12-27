@@ -3,7 +3,7 @@ package com.study.thread;
 /**
  * @author dxq
  * @title: ThreadJoinDemo
- * @projectName reflex
+ * @projectName 线程
  * @description: 线程demo
  * @date 2019/12/24 10:46
  */

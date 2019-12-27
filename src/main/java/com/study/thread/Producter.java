@@ -5,7 +5,7 @@ import java.util.Queue;
 /**
  * @author dxq
  * @title: Producter
- * @projectName reflex
+ * @projectName 线程
  * @description: 生产者
  * @date 2019/12/25 10:14
  */

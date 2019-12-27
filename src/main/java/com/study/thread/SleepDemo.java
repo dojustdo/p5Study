@@ -3,7 +3,7 @@ package com.study.thread;
 /**
  * @author dxq
  * @title: sleepDemo
- * @projectName reflex
+ * @projectName 线程
  * @description: Thread.sleep
  * @date 2019/12/24 11:09
  */
