@@ -13,6 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class RenntrantLockDemo {
     public static int count = 0;
 
+    /**
+     * 继承了 AbstractQueuedSynchronizer
+     * 对多线程，排队，阻塞，唤醒的处理
+     * 可多解读源码
+     */
     public static Lock lock = new ReentrantLock();
 
     /**
