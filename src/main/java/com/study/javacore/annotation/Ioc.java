@@ -27,7 +27,7 @@ public class Ioc {
         HashMap<String, Object> ioc = new HashMap();
 
         // 扫描包路径
-        doScanner(allClass, "com.study.annotation");
+        doScanner(allClass, "com.study.javacore.annotation");
 
         for (String aClass : allClass) {
             Class clazz = Class.forName(aClass);
