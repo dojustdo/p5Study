@@ -14,7 +14,7 @@ import java.nio.channels.FileChannel;
  * @description: NIO 实现文件复制
  * @date 2020/3/31 17:02
  */
-public class NioCopyDemo {
+public class NIOCopyDemo {
 
     public static void main(String[] args) {
         try {
@@ -29,7 +29,6 @@ public class NioCopyDemo {
             byteBuffer.flip();
             fout.write(byteBuffer);
             byteBuffer.clear();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
