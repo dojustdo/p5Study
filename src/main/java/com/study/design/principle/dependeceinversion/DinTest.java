@@ -33,6 +33,6 @@ public class DinTest {
         Dxq dxq = new Dxq();
         dxq.setiCourse(new StudyJavaCourse());
         dxq.study();
-        
+
     }
 }
