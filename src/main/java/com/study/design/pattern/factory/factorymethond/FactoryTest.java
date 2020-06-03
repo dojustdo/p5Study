@@ -14,7 +14,7 @@ public class FactoryTest {
      * @param args
      */
     public static void main(String[] args) {
-        ICourse iCourse = new JavaFactory.create();
+        ICourse iCourse = new JavaFactory().create();
         iCourse.ready();
     }
 }
