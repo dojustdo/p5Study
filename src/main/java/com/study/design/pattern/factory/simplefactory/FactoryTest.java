@@ -1,4 +1,4 @@
-package com.study.design.pattern.simplefactory;
+package com.study.design.pattern.factory.simplefactory;
 
 /**
  * @author dxq

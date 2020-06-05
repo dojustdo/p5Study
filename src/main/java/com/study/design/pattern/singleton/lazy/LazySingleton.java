@@ -1,4 +1,4 @@
-package com.study.design.pattern.singleton;
+package com.study.design.pattern.singleton.lazy;
 
 /**
  * @author dxq
@@ -10,14 +10,14 @@ package com.study.design.pattern.singleton;
 public class LazySingleton {
     /**
      * 优点：节省了内存资源
-     * 缺点： 线程不安全
+     * 缺点： 线程不安全，（用锁则性能变差）
      */
     private static LazySingleton lazySingleton;
 
     private LazySingleton() {
     }
 
-    public LazySingleton getInstance() {
+    public synchronized LazySingleton getInstance() {
         if (lazySingleton == null) {
             lazySingleton = new LazySingleton();
         }

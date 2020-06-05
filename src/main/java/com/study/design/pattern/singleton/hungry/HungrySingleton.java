@@ -1,4 +1,4 @@
-package com.study.design.pattern.singleton;
+package com.study.design.pattern.singleton.hungry;
 
 /**
  * @author dxq

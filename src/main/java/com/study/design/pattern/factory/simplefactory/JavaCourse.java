@@ -8,6 +8,7 @@ package com.study.design.pattern.factory.simplefactory;
  * @date 2020/6/2 10:52
  */
 public class JavaCourse implements ICourse {
+
     @Override
     public void ready() {
         System.out.println("准备java课程");

@@ -1,4 +1,4 @@
-package com.study.design.pattern.singleton;
+package com.study.design.pattern.singleton.hungry;
 
 /**
  * @author dxq
@@ -19,7 +19,7 @@ public class HungryStaticSingleton {
 
     }
 
-    private static HungryStaticSingleton getInstance() {
+    public static HungryStaticSingleton getInstance() {
         return HUNGRY_STATIC_SINGLETON;
     }
 
