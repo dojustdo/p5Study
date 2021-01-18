@@ -32,10 +32,18 @@ public class Producer {
         // 创建通道
         Channel channel = connection.createChannel();
 
+        // 设置消息属性 每10秒过期
+        AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
+                .deliveryMode(2)// 持久化消息
+                .contentEncoding("UTF-8")
+                .expiration("10000")
+                .build();
+
+
         // 消息
         String msg = "hello world";
-
-        channel.basicPublish(EXCHANGE_NAME, "simple", null, msg.getBytes());
+        // 通过routing key发送给交换机和队列
+        channel.basicPublish(EXCHANGE_NAME, "simple", properties, msg.getBytes());
         channel.close();
         connection.close();
     }

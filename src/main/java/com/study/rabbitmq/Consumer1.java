@@ -4,6 +4,8 @@ import com.rabbitmq.client.*;
 import com.rabbitmq.client.Consumer;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -33,6 +35,14 @@ public class Consumer1 {
         // 创建通道
         Channel channel = connection.createChannel();
 
+        // 指定队列的死信交换机, 消费者一直不获取交换机中的消息，消息就会发送到死信交换机，死信队列
+        Map<String, Object> arguments = new HashMap<>();
+        arguments.put("x-dead-letter-exchange", "DLX_EXCHANGE");
+        // 设置队列的ttl
+        arguments.put("x-expires", "9000");
+        // 设置队列的最大长度，超过长度，先进入队列的进入死信队列
+        arguments.put("x-max-length", 4);
+
         // 声明交换机
         channel.exchangeDeclare(EXCHANGE_NAME, "direct", false, false, null);
         // 声明队列
@@ -40,6 +50,14 @@ public class Consumer1 {
 
         // 绑定队列和交换机
         channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "simple");
+
+        // 声明死信交换机
+        channel.exchangeDeclare("DLX_EXCHANGE", "topic", false, false, null);
+        // 声明死信队列
+        channel.queueDeclare("DLX_QUEUE", false, false, false, null);
+
+        // 绑定死信队列和交换机
+        channel.queueBind("DLX_QUEUE", "DLX_EXCHANGE", "#");
 
         // 创建消费者
         Consumer consumer = new DefaultConsumer(channel) {
@@ -50,6 +68,6 @@ public class Consumer1 {
             }
         };
         // 开始获取消息
-        channel.basicConsume(QUEUE_NAME, true, consumer);
+        // channel.basicConsume(QUEUE_NAME, true, consumer);
     }
 }
