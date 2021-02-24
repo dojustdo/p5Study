@@ -3,7 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>rpc-server</module>
+        <module>producter</module>
+        <module>consumer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,7 +29,10 @@
             <artifactId>amqp-client</artifactId>
             <version>5.6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
