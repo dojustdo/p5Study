@@ -36,7 +36,7 @@ public class Sender {
     private String topicRoutingKey2;
 
     @Autowired
-    AmqpTemplate demoTemplate;
+    private AmqpTemplate demoTemplate;
 
     public void send(){
         Merchant merchant = new Merchant("第一个生产者对象消息");
